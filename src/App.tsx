@@ -9,7 +9,7 @@ function App() {
   const [isAnalyzing, setIsAnalyzing] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [formData, setFormData] = useState({Name:'', Description:'', Duration:'', Severity:''})
-  const [historyList, setHistoryList] = useState([])
+  const [historyList, setHistoryList] = useState<any[]>([])
 
   return (
     <section className='bg-teal-50 w-full min-h-screen px-6 py-6'>

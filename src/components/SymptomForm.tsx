@@ -27,7 +27,7 @@ type Props = {
 const SymptomForm = ({isAnalyzing,setIsAnalyzing,setIsSubmitted,formData,setFormData,setHistoryList}:Props) => {
 
 
-const severityScale = {
+const severityScale: Record<number, number>= {
      0:0, 
      1:10,
      2:20,
@@ -40,26 +40,26 @@ const severityScale = {
      9:90,
      10:100
     }
-  const handleNameChange = (e) => {
+  const handleNameChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     setFormData(prev => ({...prev, [e.target.name]:e.target.value}))
   }
 
-  const handleDescriptionChange = (e) => {
+  const handleDescriptionChange = (e:React.ChangeEvent<HTMLTextAreaElement>) => {
     setFormData(prev => ({...prev, [e.target.name]:e.target.value}))
   }
 
-  const handleDurationChange = (e) => {
+  const handleDurationChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     setFormData(prev => ({...prev, [e.target.name]:e.target.value}))
   }
 
-  const handleSeverityChange = (e) => {
+  const handleSeverityChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     let value = Number(e.target.value)
     if (isNaN(value)) value = 0
     value = Math.min(10, Math.max(0, value))
     setFormData(prev => ({...prev, [e.target.name]:value}))
   }
 
-  const handleSubmit = (e) =>{
+  const handleSubmit = (e:React.FormEvent<HTMLFormElement>) =>{
    e.preventDefault()
    setIsAnalyzing((prev) => !prev)
    setHistoryList((prev) => [...prev, formData])
@@ -105,7 +105,7 @@ return ( <form className="bg-white px-3 py-6 rounded-lg max-w-2xl mx-auto mt-4 b
             <span 
                className={`absolute -top-1 block w-4 h-4 rounded-full bg-green-700`}
                style={{ 
-                  left: `${severityScale[formData['Severity']] || 0}%`,
+                  left: `${severityScale[Number(formData['Severity'])] || 0}%`,
                   transform: 'translateX(-50%)'
                }}>
             </span>
