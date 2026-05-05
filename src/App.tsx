@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {motion}  from 'framer-motion'
 import SymptomForm from './components/SymptomForm'
 import SymptomDetails from './components/SymptomDetails'
@@ -10,6 +10,9 @@ function App() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [formData, setFormData] = useState({Name:'', Description:'', Duration:'', Severity:''})
   const [historyList, setHistoryList] = useState<any[]>([])
+
+  useEffect(()=> window.scrollTo(0,0) ,[isSubmitted])
+ 
 
   return (
     <section className='bg-teal-50 w-full min-h-screen px-6 py-6'>
@@ -32,7 +35,7 @@ function App() {
         <p className="text-gray-400 mt-2">Describe what you are feeling and get personalized health insights</p>
       </div>
       {isSubmitted
-      ? <SymptomDetails formData={formData} setFormData={setFormData} setIsSubmitted={setIsSubmitted} setHistoryList={setHistoryList} historyList={historyList}/>
+      ? <SymptomDetails formData={formData} setFormData={setFormData} setIsSubmitted={setIsSubmitted}  isSubmitted={isSubmitted} setHistoryList={setHistoryList} historyList={historyList}/>
       : <SymptomForm isAnalyzing={isAnalyzing} setIsAnalyzing={setIsAnalyzing} setHistoryList={setHistoryList} setIsSubmitted={setIsSubmitted} formData={formData} setFormData={setFormData} />}
     </section>
   )
