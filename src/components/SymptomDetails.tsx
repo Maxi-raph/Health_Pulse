@@ -1,7 +1,5 @@
 import { FaShieldAlt, FaClipboardList, FaLightbulb, FaCompass, FaInfoCircle, FaPlus, FaClock } from "react-icons/fa";
 import {motion}  from 'framer-motion'
-import {  useEffect } from 'react'
-
 
 type FormProps = {
     formData: {  
@@ -21,12 +19,10 @@ type FormProps = {
 
     historyList: any[]
 
-   isSubmitted:boolean
-
     setHistoryList: React.Dispatch<React.SetStateAction<any[]>>
 }
 
-const SymptomDetails = ({formData,isSubmitted,setIsSubmitted, setFormData}:FormProps) => {
+const SymptomDetails = ({formData,setIsSubmitted, setFormData}:FormProps) => {
 
 
 

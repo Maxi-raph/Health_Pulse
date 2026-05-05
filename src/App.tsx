@@ -35,7 +35,7 @@ function App() {
         <p className="text-gray-400 mt-2">Describe what you are feeling and get personalized health insights</p>
       </div>
       {isSubmitted
-      ? <SymptomDetails formData={formData} setFormData={setFormData} setIsSubmitted={setIsSubmitted}  isSubmitted={isSubmitted} setHistoryList={setHistoryList} historyList={historyList}/>
+      ? <SymptomDetails formData={formData} setFormData={setFormData} setIsSubmitted={setIsSubmitted}  setHistoryList={setHistoryList} historyList={historyList}/>
       : <SymptomForm isAnalyzing={isAnalyzing} setIsAnalyzing={setIsAnalyzing} setHistoryList={setHistoryList} setIsSubmitted={setIsSubmitted} formData={formData} setFormData={setFormData} />}
     </section>
   )
