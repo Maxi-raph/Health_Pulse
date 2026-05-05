@@ -22,7 +22,7 @@ type FormProps = {
     setHistoryList: React.Dispatch<React.SetStateAction<any[]>>
 }
 
-const SymptomDetails = ({formData,setIsSubmitted, historyList, setFormData}:FormProps) => {
+const SymptomDetails = ({formData,setIsSubmitted, setFormData}:FormProps) => {
 
 
 
