@@ -1,4 +1,5 @@
 import { FaHeart } from 'react-icons/fa'
+import TimelineCard from '../components/TimelineCard';
 
 const PregnancyTimeline = () => {
     return ( <section className='bg-white w-full min-h-screen py-2'>
@@ -11,7 +12,9 @@ const PregnancyTimeline = () => {
     </div>
     <h3 className="font-bold text-xl mt-6 text-center px-6">To create your pregnancy timeline, choose how you want to start.</h3>
     <p className="text-gray-400 text-center px-6 mt-2">You can use your last menstrual period or your current pregnancy week.</p>
-    div
+    <div className="flex justify-center gap-4 mt-4">
+        <TimelineCard desc='dfdf'/>
+    </div>
     </section> );
 }
  
